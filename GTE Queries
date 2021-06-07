@@ -1,0 +1,340 @@
+
+
+su btctomcat
+@dm1n1strat0r
+cd /home/btctomcat/work/gtengine
+
+cp sanjyot_june_2021/rtkyc-DEU_RID-1-1-1221.json rtkyc-USA_NE_PID--1589.json
+vi rtkyc-USA_NE_PID--1589.json
+:%s!DEU!USA!g
+:%s!RID!PID!g
+:%s!USA_PID!USA_NE_PID!g
+:%s!"1221"!"1589"!g
+:%s!"01/12/2020"!"01/03/2021"!g
+:%s!"06/02/2021"!"06/06/2021"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+cp rtkyc-DEU_RID-1-1-1221.json rtkyc-USA_NM_PID--1603.json
+vi rtkyc-USA_NM_PID--1603.json
+:%s!DEU!USA!g
+:%s!RID!PID!g
+:%s!USA_PID!USA_NM_PID!g
+:%s!"1221"!"1603"!g
+:%s!"01/12/2020"!"01/03/2021"!g
+:%s!"06/02/2021"!"06/06/2021"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/03/2021"!"01/01/2021"!g
+:%s!"06/06/2021"!"01/03/2021"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/03/2021"!"01/01/2021"!g
+:%s!"06/06/2021"!"01/03/2021"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/01/2021"!"01/11/2020"!g
+:%s!"01/03/2021"!"31/12/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/01/2021"!"01/11/2020"!g
+:%s!"01/03/2021"!"31/12/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/11/2020"!"01/08/2020"!g
+:%s!"31/12/2020"!"31/10/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/11/2020"!"01/08/2020"!g
+:%s!"31/12/2020"!"31/10/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/08/2020"!"01/07/2020"!g
+:%s!"31/10/2020"!"30/09/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/08/2020"!"01/07/2020"!g
+:%s!"31/10/2020"!"30/09/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/07/2020"!"01/05/2020"!g
+:%s!"30/09/2020"!"30/06/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/07/2020"!"01/05/2020"!g
+:%s!"30/09/2020"!"30/06/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/05/2020"!"01/03/2020"!g
+:%s!"30/06/2020"!"30/04/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/05/2020"!"01/03/2020"!g
+:%s!"30/06/2020"!"30/04/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/03/2020"!"01/01/2020"!g
+:%s!"30/04/2020"!"28/02/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/03/2020"!"01/01/2020"!g
+:%s!"30/04/2020"!"28/02/2020"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/01/2020"!"01/11/2019"!g
+:%s!"28/02/2020"!"31/12/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/01/2020"!"01/11/2019"!g
+:%s!"28/02/2020"!"31/12/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/11/2019"!"01/09/2019"!g
+:%s!"31/12/2019"!"31/10/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/11/2019"!"01/09/2019"!g
+:%s!"31/12/2019"!"31/10/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/09/2019"!"01/07/2019"!g
+:%s!"31/10/2019"!"30/09/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/09/2019"!"01/07/2019"!g
+:%s!"31/10/2019"!"30/09/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NE_PID--1589.json
+:%s!"01/07/2019"!"01/04/2019"!g
+:%s!"30/09/2019"!"30/06/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+vi rtkyc-USA_NM_PID--1603.json
+:%s!"01/07/2019"!"01/04/2019"!g
+:%s!"30/09/2019"!"30/06/2019"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NM_PID--1603.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log 
+
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+su btctomcat
+@dm1n1strat0r
+cd /home/btctomcat/work/gtengine
+ls -lrth rt*
+
+---- 
+
+:%s!"06/02/2021"!"28/02/2021"!g
+:wq!
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+rtkyc-USA_NE_PID--1589-1.json
+
+curl -X POST --data-binary "@rtkyc-USA_NE_PID--1589-1.json" -H "Content-Type: application/json" http://localhost:8002/querytool/v1/batch -u idm-gte-api:Temp#100  &
+tail -f   /temp/sharedFileSystem-btc/logs/querytool.log | grep 'ROW_NUM'
+
+:%s!"01/02/2021"!"21/02/2021"!g
+:%s!"10/02/2021"!"01/02/2021"!g
+:%s!"10/02/2021"!"20/02/2021"!g
+:%s!"01/02/2021"!"03/02/2021"!g
+:%s!"01/01/2021"!"06/02/2021"!g
+:%s!"10/02/2021"!"28/02/2021"!g
+:%s!"10/02/2021"!"16/05/2021"!g
+:wq!
+
+:%s!"10/02/2021"!"20/02/2021"!g
+:wq!
+
+
+
+
+select count(cf.custom_form_id),
+ct. custom_text_84  'MatchedTemplateCode' ,
+cn.custom_number_1 , t.template_id, 
+ct.custom_text_85  'Extracted IDCountry' ,
+t.template_type, 
+date_format(cf.created_on, '%Y-%m' ) 'Created On' ,
+ct.custom_text_11	'AgentCountry', cf.external_field_1_value 'IDCountry',  cf.external_field_4_value 'IDType'  ,  cf.state 
+ -- ,  cf.external_field_3_value 'DocRefNo',  cf.external_field_5_value 'MTCN' ,ct.custom_text_62  'Extracted IDNumber' , ct.custom_text_67  'IDNumber' ,  ct.custom_text_71  'Extracted IDType' , cf.state ,cf.created_on ,cf.last_updated_on ,cf.last_updated_by ,cf.created_by ,cf.created_on 
+from 
+tbl_custom_forms cf 
+left join tbl_custom_forms_custom_number cn on cn.custom_form_id = cf.custom_form_id 
+left join tbl_template_mst t on cn.custom_number_1 =  t.template_id
+left join tbl_custom_forms_custom_text ct on ct.custom_form_id = cf.custom_form_id 
+where -- cf.state = 'ARIDroved' and 
+cf.custom_product_id = 328  AND
+cf.created_on between  '2021-01-01' and  '2021-05-06' and
+cf.external_field_1_value in ('KWT', 'TWN', 'BHR', 'SLV', 'HKG', 'OMN', 'SLV', 'IRQ', 'LTU', 'OMN', 'CUB', 'TWN')
+and ct.custom_text_84  in('KWT_PP', 'TWN_PP', 'BHR_PP', 'SLV_PP', 'HKG_PP', 'OMN_PP', 'SLV_PP', 'IRQ_PP', 'LTU_PP', 'OMN_PP', 'CUB_PP', 'TWN_PP')
+zand cn.custom_number_1  in ('642','683','698','708','716','726','1364','1773','1784','1809','2626','2654')
+ group by date_format(cf.created_on, '%Y-%m' ) , ct.custom_text_84 ;
+ 
+ -- List of European Union countriesTo SELECT USATICULER  templates  ***************************
+select t.template_id, t.template_type,t.document_type_id,td.type_name ,t.country_code ,c.country_name
+,t.state,t.version ,
+t.is_disabled,t.is_mrz_present,t.creation_date,t.created_by,t.side,not_for_template_match,t.is_face_present,
+t.mrz_country_code,t.similar_template_grp_id from tbl_template_mst t
+left join tbl_document_type_mst td on t.document_type_id = td.id
+left join tbl_countries c on t.country_code = c.country_code
+where t.is_disabled =0 AND 
+ t.template_id in('642','683','698','708','716','726','1364','1773','1784','1809','2626','2654');
+ 
+ 
+
+
+
+
+   -- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --
+ 
+select count(cf.custom_form_id),
+ct. custom_text_84  'MatchedTemplateCode' ,
+cn.custom_number_1 , t.template_id, t.version,
+ct.custom_text_85  'Extracted IDCountry' ,
+t.template_type, 
+date_format(cf.created_on, '%Y-%m' ) 'Created On' ,
+ct.custom_text_11	'AgentCountry', cf.external_field_1_value 'IDCountry',  cf.external_field_4_value 'IDType'  ,  cf.state 
+ -- ,  cf.external_field_3_value 'DocRefNo',  cf.external_field_5_value 'MTCN' ,ct.custom_text_62  'Extracted IDNumber' , ct.custom_text_67  'IDNumber' ,  ct.custom_text_71  'Extracted IDType' , cf.state ,cf.created_on ,cf.last_updated_on ,cf.last_updated_by ,cf.created_by ,cf.created_on 
+from 
+tbl_custom_forms cf 
+left join tbl_custom_forms_custom_number cn on cn.custom_form_id = cf.custom_form_id 
+left join tbl_template_mst t on cn.custom_number_1 =  t.template_id
+left join tbl_custom_forms_custom_text ct on ct.custom_form_id = cf.custom_form_id 
+where -- cf.state = 'ARIDroved' and 
+cf.custom_product_id = 328  AND
+cf.created_on between  '2020-01-01' and  '2021-06-06' and
+cf.external_field_1_value in('USA', 'USA', 'USA')
+and ct.custom_text_84  in
+('USA_NE_PID', 'USA_NE_PID', 'USA_NM_PID', 'USA_MN_PID', 'USA_MO_PID', 'USA_MS_PID', 'USA_MT_PID', 'USA_NC_PID', 'USA_NC_PID', 'USA_ND_PID', 'USA_NE_PID', 'USA_NH_PID', 'USA_NJ_PID', 'USA_NM_PID', 'USA_NM_PID', 'USA_NM_PID', 'USA_NV_PID', 'USA_NY_PID', 'USA_OH_PID', 'USA_OK_PID')
+and cn.custom_number_1  in ('1589','1535','1603','1546','1552','1558','1567','1578','1579','1587','1589','1596','1601','1603','1604','1607','1618','1624','1630','1640')
+ group by date_format(cf.created_on, '%Y-%m' ) , ct.custom_text_84 ;
+ 
+ -- List of European Union countriesTo SELECT USATICULER  templates  ***************************
+select t.template_id, t.template_type, t.version ,t.side, t.document_type_id,td.type_name ,t.country_code ,c.country_name
+,t.state,t.version ,
+t.is_disabled,t.is_mrz_present,t.creation_date,t.created_by,t.side,not_for_template_match,t.is_face_present,
+t.mrz_country_code,t.similar_template_grp_id from tbl_template_mst t
+left join tbl_document_type_mst td on t.document_type_id = td.id
+left join tbl_countries c on t.country_code = c.country_code
+where  t.is_disabled =0 AND 
+-- t.country_code = 'USA' ;
+ t.template_id in('1589','1535','1603','1546','1552','1558','1567','1578','1579','1587','1589','1596','1601','1603','1604','1607','1618','1624','1630','1640');
+
